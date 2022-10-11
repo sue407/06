@@ -6,14 +6,47 @@
 
 
 int main(int argc, char *argv[]) {
+	int n;
+	int r;
+
+	get_integer(n);
+	get_integer2(r);
+	int result;
+	result = combination(n, r);
+	printf("C(n,r)의값  : %d ", result);
+}
+
+int combination(int n, int r)
+{
+   return (factorial(n)/(factorial(n-r)*factorial(r)));
+   
+}
+
+int factorial (int n)
+{
+	int i;
+	int res =1;
 	
-	int a=2;
-	a = square(a);
-	printf("a=%i\n",a);
+	for(i=1; i<n; i++)
+	 res = res*i;
+
+	return (res);
+
+}
+
+int get_integer (int n)
+{
+	printf("첫번째 정수n을 입력하세요  : ");
+		scanf("%d", &n);
+	    
+	return (n);
 	
 }
 
-int square(int a)
+int get_integer2 (int r)
 {
-	return (a*a);
+	printf("두번째 정수r을 입력하세요 : ");
+	    scanf("%d", &r);
+	    
+	return (r);
 }
